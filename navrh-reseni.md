@@ -42,7 +42,8 @@ Nové sloupce: Doporučena kulance, Yes/No (výchozí Ne), rek_kulance, tabulka 
 
 ## Automatizace
 - Schválení (A1): C e-mail v Outlooku s tlačítky (Office 365 Outlook: Send email with options, Schválit / Vrátit); komentář se nesbírá, při vrácení se zapíše „vráceno e-mailem"
-- Zprávy Kláře (A2): C e-mail
+- Zprávy Kláře (A2): C e-mail a navíc A soukromá zpráva od Flow bota v Teams (rozhodnutí týmu 18. 11.)
+- Persony v předmětech: interní e-maily začínají [Jitka] / [Klára] a obsahují jméno zákazníka, např. „[Jitka] Ke schválení: servisní požadavek R-2026-14233 (Daniel Veselý): Zamítnuto, 0,00“; zprávy v Teams začínají tučným „Pro Kláru · …“. E-maily zákazníkovi zůstávají podle brand/email-texty.json
 - Žádost navíc (A3): Zbývá dní (Lhůta - dnes), počet servisních požadavků se stejným produktem a typem vady za 30 dnů
 - Potvrzení navíc (A4): nic navíc (potvrzení zůstává podle brand/email-texty.json, 3 věty)
 - Texty (A5), interně tykání, pojmy podle slovníku:
