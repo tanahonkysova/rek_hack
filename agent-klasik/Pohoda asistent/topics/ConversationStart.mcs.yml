@@ -1,0 +1,15 @@
+mcs.metadata:
+  componentName: Zahájení konverzace
+  description: Toto systémové téma se spustí, když agent zaznamená aktivitu označující začátek nové konverzace. Pokud nechcete, aby agent zahájil konverzaci, zakažte toto téma.
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnConversationStart
+  id: main
+  actions:
+    - kind: SendActivity
+      id: sendMessage_M0LuhV
+      activity:
+        text:
+          - Ahoj, tady Asistent Pohoda. Pošli mi číslo požadavku, nebo napiš Posuď všechny nové. Hlídám lhůty, ať nic nepropadne.
+        speak:
+          - Ahoj, tady Asistent Pohoda. Pošli mi číslo požadavku, nebo napiš Posuď všechny nové. Hlídám lhůty, ať nic nepropadne.

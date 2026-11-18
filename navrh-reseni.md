@@ -56,7 +56,17 @@ Nové sloupce: Doporučena kulance, Yes/No (výchozí Ne), rek_kulance, tabulka 
 - Poznámka: tým má jeden lab účet, Klára, Jitka i Pavel jsou LabAdmin12. Odkaz na detail v F2 (`<URL aplikace>/reklamace/{id}`) se doplní, až bude hotová aplikace z části 2
 
 ## Agent
-(vyplní část 4)
+- Jméno a povaha (G1): Asistent Pohoda, C ochránce lhůt (u každé odpovědi připomene, kolik dní zbývá, a nabídne další krok). Typická věta: „R-2026-… zbývá 3 dny. Navrhuji Výměnu, mám ti napsat odůvodnění?“
+- Odpověď (G2): A tabulka
+- Zápis (G3): B nejdřív návrh s odůvodněním, zápis až po potvrzení (Klára AI zatím moc nevěří, pilot nesmí rozhodovat za člověka)
+- Dovednost (G4): D4 návrh odůvodnění rozhodnutí (přidělená, tým 12: ((12 - 1) mod 4) + 1 = 4), pomůže hlavně Kláře u zamítnutí a kulance
+- Uvítání (G5): „Ahoj, tady Asistent Pohoda. Pošli mi číslo požadavku, nebo napiš Posuď všechny nové. Hlídám lhůty, ať nic nepropadne.“
+- Startéry (G5): Posuď všechny nové reklamace · Posuď R-2026-… · Co je ohrožené lhůtou? · Napiš odůvodnění k R-2026-…
+- Odmítnutí (G6): „Rozhodnutí je na tobě. Připravím ti návrh a odůvodnění a připomenu, kolik dní zbývá.“
+- Odpovědi zákazníkům (G6): styl B věcný vstřícný, vykání, specialistkám tykání (B4); vzor E-03 SK: „Dobrý deň, vašu reklamáciu R-2026-… sme posúdili a uznávame ju. Umývačku riadu vám vymeníme za novú, výmenu vybavíme najneskôr do {termín}. O presnom termíne vás budeme informovať e-mailom. Ospravedlňujeme sa za komplikácie, ktoré vám to spôsobilo.“ Podpis: jméno přiřazené specialistky + „Zákaznícke centrum Pohoda“ (jméno se nepíše pevně)
+- Výzva v agentovi: V2 kulance po záruce (okno 3 měsíce, KV-450 a KV-800 6 měsíců, uznatelný typ vady, oprava zdarma a zákazník platí jen díl; zapisuje rek_kulance a rek_kulanceduvod, Návrh AI zůstává Zamítnuto)
+- Stav (18. 11. 2026): klasický agent „Pohoda asistent“ (bots/b6a053e6-5de3-f111-84e8-000d3a5bbb5b) v solution Reklamace, YAML v `agent-klasik/`. Instrukce (JÁDRO doslova + VARIANTA), uvítání, startéry, popis, ikona, web a obecné znalosti vypnuté, knowledge Reklamacni-rad.pdf; Dataverse MCP přidává tým v portálu. Ověření kroků 1–5 zatím NEPROBĚHLO (nedostatek času / kreditů); kontrolu kroků 3–6 v Dataverse dělá `python agent/overeni-agenta.py`. Agent z nového rozhraní (agents/553291e1-…) je nepoužívaný.
+- rek_zbyvadni plní denně v 00:15 flow „Reklamace – Zbývá dní“ (solution Reklamace), aby agent mohl brát Zbývá dní ze sloupce podle JÁDRA.
 
 ## Power BI
 (vyplní část 5)

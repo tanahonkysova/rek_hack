@@ -1,0 +1,14 @@
+mcs.metadata:
+  componentName: Microsoft Dataverse - Microsoft Dataverse MCP Server
+kind: TaskDialog
+modelDisplayName: Microsoft Dataverse MCP Server
+modelDescription: Provides Remote MCP Server access to Dataverse
+action:
+  kind: InvokeExternalAgentTaskAction
+  connectionReference: rek_Pohodaasistent.shared_commondataserviceforapps.shared-commondataser-500b65a0
+  connectionProperties:
+    mode: Invoker
+
+  operationDetails:
+    kind: ModelContextProtocolMetadata
+    operationId: InvokeMCP

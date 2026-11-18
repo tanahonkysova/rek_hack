@@ -1,0 +1,28 @@
+mcs.metadata:
+  componentName: Uvítání
+  description: Toto téma se spustí, když uživatel pozdraví agenta.
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Uvítání
+    includeInOnSelectIntent: false
+    triggerQueries:
+      - Dobré odpoledne
+      - Dobré ráno
+      - Dobrý den
+      - Ahoj
+      - Zdravím
+
+  actions:
+    - kind: SendActivity
+      id: sendMessage_abmysR
+      activity:
+        text:
+          - Dobrý den, jak vám dnes mohu pomoci?
+        speak:
+          - Dobrý den, <break strength="medium" /> jak vám mohu pomoci?
+
+    - kind: CancelAllDialogs
+      id: cancelAllDialogs_01At22

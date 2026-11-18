@@ -1,0 +1,8 @@
+mcs.metadata:
+  componentName: Microsoft Dataverse MCP Server — Microsoft Dataverse MCP Server
+  description: Provides Remote MCP Server access to Dataverse
+kind: McpTool
+authMode: Invoker
+connectionReference: rek_asistentpohoda_rNTW5a.cr.shared_commondataserviceforapps.shared-commondataser-500b65a0
+connectorId: /providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps
+operationId: InvokeMCP

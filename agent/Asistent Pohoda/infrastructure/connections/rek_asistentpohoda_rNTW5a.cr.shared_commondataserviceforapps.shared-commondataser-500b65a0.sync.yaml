@@ -1,0 +1,3 @@
+connectionReferences:
+  - connectionReferenceLogicalName: rek_asistentpohoda_rNTW5a.cr.shared_commondataserviceforapps.shared-commondataser-500b65a0
+    connectorId: /providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps
