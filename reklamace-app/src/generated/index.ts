@@ -5,6 +5,7 @@
 
 // Models
 export * as CommonModels from './models/CommonModels';
+export * as MicrosoftCopilotStudioModel from './models/MicrosoftCopilotStudioModel';
 export * as Rek_objednavkasModel from './models/Rek_objednavkasModel';
 export * as Rek_produktsModel from './models/Rek_produktsModel';
 export * as Rek_reklamacesModel from './models/Rek_reklamacesModel';
@@ -12,6 +13,7 @@ export * as Rek_typvadiesModel from './models/Rek_typvadiesModel';
 export * as SystemusersModel from './models/SystemusersModel';
 
 // Services
+export * from './services/MicrosoftCopilotStudioService';
 export * from './services/Rek_objednavkasService';
 export * from './services/Rek_produktsService';
 export * from './services/Rek_reklamacesService';

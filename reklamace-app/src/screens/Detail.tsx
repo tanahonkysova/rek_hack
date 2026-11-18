@@ -9,6 +9,7 @@ import { castka, datum, dnes, isoDatum, parseDatum } from '../lib/format'
 import { PillNavrh, StitekLhuty, StitekStav, StitekZaruka } from '../components/Stitky'
 import { IkonaKlic, IkonaSrdce, IkonaTuzka, IkonaZpet } from '../components/Ikony'
 import Fotka from '../components/Fotka'
+import AsistentPanel from '../components/AsistentPanel'
 import { LIMIT_VRACENI, cilovyStav } from '../lib/pravidla'
 
 function chybaText(e: unknown): string {
@@ -16,11 +17,12 @@ function chybaText(e: unknown): string {
   return typeof e === 'string' ? e : JSON.stringify(e)
 }
 
-function Rozhodnuti({ r, mena, cenaObjednavky, vyzadujeTechnika }: {
+function Rozhodnuti({ r, mena, cenaObjednavky, vyzadujeTechnika, vlozeni }: {
   r: Reklamace
   mena: string
   cenaObjednavky?: number
   vyzadujeTechnika: boolean
+  vlozeni?: { text: string; n: number }
 }) {
   const predvyplneno = r.rek_rozhodnuti ?? (r.rek_navrhai !== undefined && r.rek_navrhai !== null && r.rek_navrhai !== NAVRH_K_TECHNIKOVI ? r.rek_navrhai : undefined)
   const [reseni, setReseni] = useState<string>(predvyplneno !== undefined ? String(predvyplneno) : '')
@@ -41,6 +43,13 @@ function Rozhodnuti({ r, mena, cenaObjednavky, vyzadujeTechnika }: {
     setZprava(null)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [r.rek_reklamaceid])
+
+  // Text odůvodnění od asistenta (D4) vloží Klára tlačítkem, uloží ho sama.
+  useEffect(() => {
+    if (!vlozeni) return
+    setOduvodneni(vlozeni.text)
+    document.getElementById('oduvodneni')?.scrollIntoView({ block: 'center' })
+  }, [vlozeni])
 
   const bezPosudku = vyzadujeTechnika && !(r.rek_posudek ?? '').trim()
   const nakladyCislo = naklady.trim() === '' ? null : Number(naklady.replace(/\s/g, '').replace(',', '.'))
@@ -247,6 +256,7 @@ export default function Detail({ id }: { id: string }) {
   const produkt = useMemo(() => data?.produkty.find((p) => p.rek_produktid === r?._rek_produkt_value), [data, r])
   const objednavka = useMemo(() => data?.objednavky.find((o) => o.rek_objednavkaid === r?._rek_objednavka_value), [data, r])
   const typ = useMemo(() => data?.typyVad.find((t) => t.rek_typvadyid === r?._rek_typvady_value), [data, r])
+  const [vlozeni, setVlozeni] = useState<{ text: string; n: number } | undefined>()
 
   if (!data) return <p className="tlumene">Načítám…</p>
   if (!r) return <p className="prazdny">Servisní požadavek nenalezen.</p>
@@ -342,11 +352,20 @@ export default function Detail({ id }: { id: string }) {
         </section>
       )}
 
+      {r.rek_stav !== STAV.Vyrizeno && r.rek_cislo && (
+        <AsistentPanel
+          key={r.rek_reklamaceid}
+          cislo={r.rek_cislo}
+          onOduvodneni={(text) => setVlozeni((v) => ({ text, n: (v?.n ?? 0) + 1 }))}
+        />
+      )}
+
       <Rozhodnuti
         r={r}
         mena={mena}
         cenaObjednavky={objednavka?.rek_cena}
         vyzadujeTechnika={typ?.rek_vyzadujetechnika === true}
+        vlozeni={vlozeni}
       />
     </article>
   )

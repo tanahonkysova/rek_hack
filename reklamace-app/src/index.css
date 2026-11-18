@@ -1053,3 +1053,60 @@ fieldset.pole-chyba .prepinace {
 .filtr-hledat input {
   width: 100%;
 }
+
+/* ---------- Asistent Pohoda (Copilot Studio) ---------- */
+.asistent h2 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.asistent-akce {
+  margin-top: 0;
+  flex-wrap: wrap;
+}
+.asistent-konverzace {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+  max-height: 420px;
+  overflow: auto;
+}
+.asistent-zprava {
+  padding: 8px 12px;
+  border-radius: var(--brand-radius);
+  font-size: 13px;
+}
+.asistent-zprava p {
+  margin: 2px 0;
+}
+.asistent-zprava ul {
+  margin: 4px 0;
+  padding-left: 18px;
+}
+.zprava-ja {
+  align-self: flex-end;
+  background: color-mix(in srgb, var(--brand-primary) 10%, var(--brand-surface));
+  max-width: 85%;
+}
+.zprava-agent {
+  background: var(--brand-bg);
+  border-left: 3px solid var(--brand-secondary);
+}
+.asistent-tabulka td,
+.asistent-tabulka th {
+  font-size: 12px;
+  height: auto;
+}
+.asistent-dotaz {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.asistent-dotaz input {
+  flex: 1;
+}
+.asistent-poznamka {
+  font-size: 12px;
+  margin: 6px 0 0;
+}
