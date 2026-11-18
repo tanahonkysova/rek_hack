@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="350" height="120" viewBox="0 0 350 120" role="img" aria-label="Pohoda Spotřebiče">
+  <g fill="none" stroke="#E8B04A" stroke-width="5" stroke-linecap="round">
+    <path d="M38 34 q-6 -7 0 -14 q6 -7 0 -14"/>
+    <path d="M54 34 q-6 -7 0 -14 q6 -7 0 -14"/>
+    <path d="M70 34 q-6 -7 0 -14 q6 -7 0 -14"/>
+  </g>
+  <path d="M84 50 q20 0 20 14 q0 14 -20 14" fill="none" stroke="#8A1538" stroke-width="8" stroke-linecap="round"/>
+  <path d="M20 40 H88 V68 Q88 96 54 96 Q20 96 20 68 Z" fill="#8A1538"/>
+  <rect x="8" y="102" width="92" height="9" rx="4.5" fill="#8A1538"/>
+  <text x="124" y="66" font-family="'Nunito Sans', 'Segoe UI', Arial, sans-serif" font-size="56" font-weight="800" fill="#8A1538">Pohoda</text>
+  <text x="126" y="103" font-family="'Nunito Sans', 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="600" letter-spacing="1" fill="#8A1538">Spotřebiče</text>
+</svg>

@@ -1,0 +1,14 @@
+{
+  "name": "Pohoda Spotřebiče",
+  "dataColors": ["#8A1538", "#2F3A45", "#E8B04A", "#B8466A", "#5C6B7A", "#1E7B45", "#F3D08E", "#6E0F2C"],
+  "background": "#F4F5F7",
+  "foreground": "#1E252C",
+  "tableAccent": "#8A1538",
+  "good": "#1E7B45", "neutral": "#9A5A00", "bad": "#C62828",
+  "textClasses": {
+    "callout": { "fontFace": "Nunito Sans, Segoe UI", "fontSize": 28, "color": "#1E252C" },
+    "title": { "fontFace": "Nunito Sans, Segoe UI", "fontSize": 12, "color": "#1E252C" },
+    "header": { "fontFace": "Nunito Sans, Segoe UI", "fontSize": 12, "color": "#1E252C" },
+    "label": { "fontFace": "Nunito Sans, Segoe UI", "fontSize": 10, "color": "#1E252C" }
+  }
+}
