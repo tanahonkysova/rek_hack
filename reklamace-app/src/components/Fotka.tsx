@@ -31,7 +31,10 @@ function naUrl(data: unknown): string | null {
     else bajty = Uint8Array.from(Object.keys(o).filter((k) => /^\d+$/.test(k)).sort((a, b) => Number(a) - Number(b)).map((k) => Number(o[k])))
   } else return null
   if (!bajty.length) return null
-  return URL.createObjectURL(new Blob([bajty.buffer as ArrayBuffer], { type: typObrazku(bajty) }))
+  // data: URL místo blob: (hostitel Power Apps může blob: v obrázcích blokovat).
+  let bin = ''
+  for (let i = 0; i < bajty.length; i += 0x8000) bin += String.fromCharCode(...bajty.subarray(i, i + 0x8000))
+  return `data:${typObrazku(bajty)};base64,${btoa(bin)}`
 }
 
 /** Záloha: miniatura z rek_fotka (base64 v záznamu). 'zadna' = záznam fotku nemá. */
@@ -57,16 +60,29 @@ export default function Fotka({ id, popis, velka }: { id: string; popis?: string
   const [otevrena, setOtevrena] = useState(false)
   // nacitam → ok | zadna (záznam fotku nemá) | chyba (fotku nejde stáhnout)
   const [stav, setStav] = useState<'nacitam' | 'ok' | 'zadna' | 'chyba'>('nacitam')
+  const [zalohaZkusena, setZalohaZkusena] = useState(false)
+
+  // Obrázek se nevykreslil (rozbitá data nebo blokovaná URL): zkusit miniaturu ze záznamu, pak hláška.
+  const priChybeObrazku = async () => {
+    if (zalohaZkusena) return setStav('chyba')
+    setZalohaZkusena(true)
+    const u = await nahledZeZaznamu(id)
+    if (u === 'zadna') setStav('zadna')
+    else if (u && u !== nahled) setNahled(u)
+    else setStav('chyba')
+  }
 
   useEffect(() => {
     setNahled(null)
     setPlna(null)
     setStav('nacitam')
+    setZalohaZkusena(false)
     let zruseno = false
     let url: string | null = null
     const zaloha = async () => {
       const u = await nahledZeZaznamu(id)
       if (zruseno) return
+      setZalohaZkusena(true)
       if (u === 'zadna') setStav('zadna')
       else if (u) {
         url = u
@@ -121,7 +137,7 @@ export default function Fotka({ id, popis, velka }: { id: string; popis?: string
         </p>
       ) : nahled ? (
         <button type="button" className="fotka-nahled" onClick={() => void otevri()} title="Zobrazit v plné velikosti">
-          <img src={nahled} alt="Fotka vady" />
+          <img src={nahled} alt="Fotka vady" onError={() => void priChybeObrazku()} />
         </button>
       ) : (
         <div className="fotka-nacitani tlumene">Načítám fotku…</div>
@@ -136,7 +152,7 @@ export default function Fotka({ id, popis, velka }: { id: string; popis?: string
           <button type="button" className="btn lightbox-zavrit" onClick={() => setOtevrena(false)} aria-label="Zavřít">
             <IkonaZavrit />
           </button>
-          <img src={plna ?? nahled ?? ''} alt="Fotka vady v plné velikosti" />
+          <img src={plna ?? nahled ?? ''} alt="Fotka vady v plné velikosti" onError={() => plna && setPlna(null)} />
         </div>
       )}
     </div>

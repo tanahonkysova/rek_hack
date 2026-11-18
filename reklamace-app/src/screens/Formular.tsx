@@ -26,6 +26,19 @@ const NAZEV_POLE: Record<Pole, string> = {
   popis: 'Popis česky',
 }
 
+// Sloupec typu Image v Dataverse bere jen tyto formáty a nejvýš 10 MB (MaxSizeInKB 10240). HEIC z iPhonu neprojde.
+const FOTKA_TYPY = ['image/jpeg', 'image/png', 'image/gif', 'image/bmp']
+const FOTKA_MAX_B = 10 * 1024 * 1024
+
+function kontrolaFotky(f: File): string | null {
+  if (!FOTKA_TYPY.includes(f.type)) return `Fotka „${f.name}“ má nepodporovaný formát (${f.type || 'neznámý'}). Nahraj JPG, PNG, GIF nebo BMP.`
+  if (f.size > FOTKA_MAX_B) return `Fotka „${f.name}“ má ${(f.size / 1024 / 1024).toFixed(1)} MB, limit je 10 MB.`
+  return null
+}
+
+// Chyba nahrání fotky u nově založeného požadavku: přeneseme ji do formuláře Upravit, kam aplikace přejde.
+let odlozenaChyba: string | null = null
+
 function chybaText(e: unknown): string {
   if (!e) return 'neznámá chyba'
   if (e instanceof Error) return e.message
@@ -53,7 +66,11 @@ export default function Formular({ id }: { id?: string }) {
   const [fotka, setFotka] = useState<File | null>(null)
   const [doklad, setDoklad] = useState(false)
   const [chyby, setChyby] = useState<Pole[]>([])
-  const [jineChyby, setJineChyby] = useState<string[]>([])
+  const [jineChyby, setJineChyby] = useState<string[]>(() => {
+    const c = odlozenaChyba
+    odlozenaChyba = null
+    return c ? [c] : []
+  })
   const [ukladam, setUkladam] = useState(false)
   const [nacteno, setNacteno] = useState(!upravit)
 
@@ -185,8 +202,20 @@ export default function Formular({ id }: { id?: string }) {
       }
 
       if (fotka && cilId) {
-        const f = await Rek_reklamacesService.upload(cilId, 'rek_fotka', fotka)
-        if (f.error) jine.push('Fotku se nepodařilo nahrát: ' + chybaText(f.error))
+        const f = await Rek_reklamacesService.upload(cilId, 'rek_fotka', fotka).catch((e: unknown) => ({ error: e }))
+        if (f.error) {
+          // Dřív se chyba zapsala a hned se odnavigovalo, takže nahrání selhalo potichu.
+          const zprava = 'Požadavek je uložený, ale fotku se nepodařilo nahrát: ' + chybaText(f.error) + '. Zkus ji vybrat znovu a uložit.'
+          await obnovData()
+          if (upravit) {
+            setFotka(null)
+            setJineChyby([...jine, zprava])
+          } else {
+            odlozenaChyba = zprava
+            navigate(`/reklamace/${cilId}/upravit`)
+          }
+          return
+        }
       }
       await obnovData()
       if (!upravit) navigate(cilId ? `/?nova=${cilId}` : '/')
@@ -341,7 +370,22 @@ export default function Formular({ id }: { id?: string }) {
             <span>Fotka vady</span>
             <span className="soubor">
               <IkonaFotka />
-              <input type="file" accept="image/*" onChange={(e) => setFotka(e.target.files?.[0] ?? null)} />
+              <input
+                type="file"
+                accept="image/jpeg,image/png,image/gif,image/bmp"
+                onChange={(e) => {
+                  const f = e.target.files?.[0] ?? null
+                  const chyba = f ? kontrolaFotky(f) : null
+                  if (chyba) {
+                    e.target.value = ''
+                    setFotka(null)
+                    setJineChyby([chyba])
+                  } else {
+                    setFotka(f)
+                    setJineChyby((j) => j.filter((t) => !t.startsWith('Fotka „')))
+                  }
+                }}
+              />
             </span>
             {upravit && puvodni?.rek_fotkaid && !fotka && <small className="tlumene">Fotka už je nahraná, nová ji nahradí.</small>}
           </label>
