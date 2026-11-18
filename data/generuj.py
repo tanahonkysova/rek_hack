@@ -287,14 +287,14 @@ ODUV = {"Výměna": "Vada uznána, zákazník dostane nový kus. Lhůta dodržen
         "Oprava": "Vada uznána, oprava v dílně proběhla, výrobek vrácen zákazníkovi.",
         "Vrácení peněz": "Vada uznána, výměna nebyla možná, zákazníkovi vrácena kupní cena dobropisem.",
         "Sleva": "Vada uznána, zákazník si výrobek ponechal a přijal přiměřenou slevu.",
-        "Zamítnuto": "Vada neuznána: podle posudku a fotky jde o mechanické poškození nebo běžné opotřebení (čl. 6 reklamačního řádu). "
+        "Zamítnuto": "Vada neuznána: podle posudku a fotky jde o mechanické poškození nebo běžné opotřebení (čl. 8 reklamačního řádu). "
                      "Zákazníkovi nabídnuta placená oprava, orientačně 690 Kč / 28 €."}
-NAVRH_TXT = {"Oprava": "Typ vady je uznatelný a jde opravit v dílně. Podle čl. 4 reklamačního řádu má přednost oprava, pokud je rychlá.",
-             "Výměna": "Vada vznikla bez vnější příčiny a výrobek je v záruce. Podle čl. 4 reklamačního řádu navrhuji výměnu kusu.",
-             "Vrácení peněz": "Vada je uznatelná a výměna ani oprava nejsou možné v přiměřené lhůtě. Podle čl. 5 reklamačního řádu navrhuji vrácení peněz.",
-             "Sleva": "Vada je drobná a nebrání používání. Podle čl. 5 reklamačního řádu navrhuji přiměřenou slevu.",
-             "Zamítnuto": "Podle fotky a popisu jde o poškození uživatelem nebo běžné opotřebení. Podle čl. 6 reklamačního řádu navrhuji zamítnutí.",
-             "K technikovi": "Z popisu a fotky nelze rozhodnout, zda jde o vadu nebo poškození. Podle čl. 3 reklamačního řádu je potřeba posudek technika."}
+NAVRH_TXT = {"Oprava": "Typ vady je uznatelný a jde opravit v dílně. Podle čl. 7 reklamačního řádu má přednost oprava, pokud je rychlá.",
+             "Výměna": "Vada vznikla bez vnější příčiny a výrobek je v záruce. Podle čl. 7 reklamačního řádu navrhuji výměnu kusu.",
+             "Vrácení peněz": "Vada je uznatelná a výměna ani oprava nejsou možné v přiměřené lhůtě. Podle čl. 7 reklamačního řádu navrhuji vrácení peněz.",
+             "Sleva": "Vada je drobná a nebrání používání. Podle čl. 7 reklamačního řádu navrhuji přiměřenou slevu.",
+             "Zamítnuto": "Podle fotky a popisu jde o poškození uživatelem nebo běžné opotřebení. Podle čl. 8 reklamačního řádu navrhuji zamítnutí.",
+             "K technikovi": "Z popisu a fotky nelze rozhodnout, zda jde o vadu nebo poškození. Podle čl. 6 reklamačního řádu je potřeba posudek technika."}
 
 STAVY = ["Nová", "Čeká na doplnění", "Posuzuje se", "U technika", "Ke schválení", "Rozhodnuto", "Vyřízeno", "Po lhůtě"]
 RESENI = ["Oprava", "Výměna", "Vrácení peněz", "Sleva", "Zamítnuto"]
@@ -529,7 +529,7 @@ for r in rek:
     r["posudek"] = POSUDEK[r["typ"]] if r["posudek_pavel"] else ""
     r["oduvodneni"] = ODUV[r["rozhodnuti"]] if r["rozhodnuti"] else ""
     if r["mimo_zaruku"]:
-        r["oduvodneni"] = "Reklamace uplatněna po skončení 24měsíční záruky (čl. 2 reklamačního řádu). Zákazníkovi nabídnuta placená oprava."
+        r["oduvodneni"] = "Reklamace uplatněna po skončení 24měsíční záruky (čl. 3 reklamačního řádu). Zákazníkovi nabídnuta placená oprava."
     if r["stav"] == "Vyřízeno" and r["rozhodnuti"] != "Zamítnuto":
         cena = o["cena"]
         podil = {"Výměna": (0.6, 1.0), "Oprava": (0.1, 0.4), "Vrácení peněz": (1.0, 1.0), "Sleva": (0.1, 0.3)}[r["rozhodnuti"]]

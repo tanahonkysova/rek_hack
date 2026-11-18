@@ -1,0 +1,446 @@
+{
+  "prostredi": "https://org37b4cbab.crm.dynamics.com",
+  "prefix": "rek",
+  "solution": {
+    "uniquename": "Reklamace",
+    "id": "57f1aaf9-2de3-f111-84e8-000d3a5bbb5b",
+    "verze": "1.0.0.0"
+  },
+  "tabulky": {
+    "rek_produkt": {
+      "zobrazovany_nazev": "Produkt",
+      "entity_set": "rek_produkts",
+      "primarni_id": "rek_produktid",
+      "primarni_sloupec": "rek_kod",
+      "sloupce": {
+        "rek_aktivni": {
+          "zobrazovany_nazev": "Aktivní",
+          "typ": "Yes/No"
+        },
+        "rek_cena": {
+          "zobrazovany_nazev": "Cena (Kč)",
+          "typ": "Decimal"
+        },
+        "rek_kategorie": {
+          "zobrazovany_nazev": "Kategorie",
+          "typ": "Choice",
+          "choice": {
+            "100000000": "Kávovary a kuchyně",
+            "100000001": "Vysavače",
+            "100000002": "Praní a mytí",
+            "100000003": "Příslušenství a díly"
+          }
+        },
+        "rek_kod": {
+          "zobrazovany_nazev": "Kód",
+          "typ": "Text"
+        },
+        "rek_nazev": {
+          "zobrazovany_nazev": "Název",
+          "typ": "Text"
+        },
+        "rek_zaruka": {
+          "zobrazovany_nazev": "Záruka (měsíce)",
+          "typ": "Whole number"
+        }
+      }
+    },
+    "rek_objednavka": {
+      "zobrazovany_nazev": "Objednávka",
+      "entity_set": "rek_objednavkas",
+      "primarni_id": "rek_objednavkaid",
+      "primarni_sloupec": "rek_cislo",
+      "sloupce": {
+        "rek_cena": {
+          "zobrazovany_nazev": "Cena",
+          "typ": "Decimal"
+        },
+        "rek_cislo": {
+          "zobrazovany_nazev": "Číslo objednávky",
+          "typ": "Text"
+        },
+        "rek_datumnakupu": {
+          "zobrazovany_nazev": "Datum nákupu",
+          "typ": "Date only"
+        },
+        "rek_email": {
+          "zobrazovany_nazev": "E-mail zákazníka",
+          "typ": "Text"
+        },
+        "rek_mena": {
+          "zobrazovany_nazev": "Měna",
+          "typ": "Choice",
+          "choice": {
+            "100000000": "CZK",
+            "100000001": "EUR"
+          }
+        },
+        "rek_produkt": {
+          "zobrazovany_nazev": "Produkt",
+          "typ": "Lookup",
+          "cil": "rek_produkt",
+          "navigace": "rek_produkt",
+          "odata_bind": "rek_produkt@odata.bind",
+          "odata_hodnota": "_rek_produkt_value"
+        },
+        "rek_zakaznik": {
+          "zobrazovany_nazev": "Zákazník",
+          "typ": "Text"
+        },
+        "rek_zeme": {
+          "zobrazovany_nazev": "Země",
+          "typ": "Choice",
+          "choice": {
+            "100000000": "Česko",
+            "100000001": "Slovensko"
+          }
+        }
+      }
+    },
+    "rek_typvady": {
+      "zobrazovany_nazev": "Typ vady",
+      "entity_set": "rek_typvadies",
+      "primarni_id": "rek_typvadyid",
+      "primarni_sloupec": "rek_nazev",
+      "sloupce": {
+        "rek_kod": {
+          "zobrazovany_nazev": "Kód",
+          "typ": "Text"
+        },
+        "rek_nazev": {
+          "zobrazovany_nazev": "Název",
+          "typ": "Text"
+        },
+        "rek_popisproai": {
+          "zobrazovany_nazev": "Popis pro AI",
+          "typ": "Multiline"
+        },
+        "rek_uznatelna": {
+          "zobrazovany_nazev": "Uznatelná",
+          "typ": "Yes/No"
+        },
+        "rek_vychozireseni": {
+          "zobrazovany_nazev": "Výchozí řešení",
+          "typ": "Choice",
+          "choice": {
+            "100000000": "Oprava",
+            "100000001": "Výměna",
+            "100000002": "Vrácení peněz",
+            "100000003": "Sleva",
+            "100000004": "Zamítnuto"
+          }
+        },
+        "rek_vyzadujetechnika": {
+          "zobrazovany_nazev": "Vyžaduje technika",
+          "typ": "Yes/No"
+        }
+      }
+    },
+    "rek_reklamace": {
+      "zobrazovany_nazev": "Reklamace",
+      "entity_set": "rek_reklamaces",
+      "primarni_id": "rek_reklamaceid",
+      "primarni_sloupec": "rek_cislo",
+      "sloupce": {
+        "rek_chybejici": {
+          "zobrazovany_nazev": "Chybějící údaje",
+          "typ": "Text"
+        },
+        "rek_cislo": {
+          "zobrazovany_nazev": "Číslo",
+          "typ": "Text"
+        },
+        "rek_datumvyrizeni": {
+          "zobrazovany_nazev": "Datum vyřízení",
+          "typ": "Date only"
+        },
+        "rek_email": {
+          "zobrazovany_nazev": "E-mail zákazníka",
+          "typ": "Text"
+        },
+        "rek_fotka": {
+          "zobrazovany_nazev": null,
+          "typ": "Image"
+        },
+        "rek_jazyk": {
+          "zobrazovany_nazev": "Jazyk",
+          "typ": "Choice",
+          "choice": {
+            "100000000": "Čeština",
+            "100000001": "Slovenština"
+          }
+        },
+        "rek_jistota": {
+          "zobrazovany_nazev": "Jistota AI",
+          "typ": "Choice",
+          "choice": {
+            "100000000": "Vysoká",
+            "100000001": "Střední",
+            "100000002": "Nízká"
+          }
+        },
+        "rek_kanal": {
+          "zobrazovany_nazev": "Kanál",
+          "typ": "Choice",
+          "choice": {
+            "100000000": "E-mail",
+            "100000001": "Formulář e-shopu",
+            "100000002": "Telefon",
+            "100000003": "Prodejna"
+          }
+        },
+        "rek_komentar": {
+          "zobrazovany_nazev": "Komentář schvalovatele",
+          "typ": "Multiline"
+        },
+        "rek_kulance": {
+          "zobrazovany_nazev": "Doporučena kulance",
+          "typ": "Yes/No"
+        },
+        "rek_kulanceduvod": {
+          "zobrazovany_nazev": "Důvod kulance",
+          "typ": "Multiline"
+        },
+        "rek_lhuta": {
+          "zobrazovany_nazev": "Lhůta",
+          "typ": "Date only",
+          "calculated": true
+        },
+        "rek_naklady": {
+          "zobrazovany_nazev": "Náklady řešení",
+          "typ": "Decimal"
+        },
+        "rek_navrhai": {
+          "zobrazovany_nazev": "Návrh AI",
+          "typ": "Choice",
+          "choice": {
+            "100000000": "Oprava",
+            "100000001": "Výměna",
+            "100000002": "Vrácení peněz",
+            "100000003": "Sleva",
+            "100000004": "Zamítnuto",
+            "100000005": "K technikovi"
+          }
+        },
+        "rek_navrhoduvodneni": {
+          "zobrazovany_nazev": "Odůvodnění návrhu",
+          "typ": "Multiline"
+        },
+        "rek_objednavka": {
+          "zobrazovany_nazev": "Objednávka",
+          "typ": "Lookup",
+          "cil": "rek_objednavka",
+          "navigace": "rek_objednavka",
+          "odata_bind": "rek_objednavka@odata.bind",
+          "odata_hodnota": "_rek_objednavka_value"
+        },
+        "rek_oduvodneni": {
+          "zobrazovany_nazev": "Odůvodnění rozhodnutí",
+          "typ": "Multiline"
+        },
+        "rek_popiscesky": {
+          "zobrazovany_nazev": "Popis česky",
+          "typ": "Multiline"
+        },
+        "rek_popisfotky": {
+          "zobrazovany_nazev": "Popis fotky",
+          "typ": "Multiline"
+        },
+        "rek_popiszakaznika": {
+          "zobrazovany_nazev": "Popis zákazníka",
+          "typ": "Multiline"
+        },
+        "rek_posudek": {
+          "zobrazovany_nazev": "Posudek technika",
+          "typ": "Multiline"
+        },
+        "rek_produkt": {
+          "zobrazovany_nazev": "Produkt",
+          "typ": "Lookup",
+          "cil": "rek_produkt",
+          "navigace": "rek_produkt",
+          "odata_bind": "rek_produkt@odata.bind",
+          "odata_hodnota": "_rek_produkt_value"
+        },
+        "rek_rozhodnuti": {
+          "zobrazovany_nazev": "Rozhodnutí",
+          "typ": "Choice",
+          "choice": {
+            "100000000": "Oprava",
+            "100000001": "Výměna",
+            "100000002": "Vrácení peněz",
+            "100000003": "Sleva",
+            "100000004": "Zamítnuto"
+          }
+        },
+        "rek_schvalil": {
+          "zobrazovany_nazev": "Schválil",
+          "typ": "Lookup",
+          "cil": "systemuser",
+          "navigace": "rek_schvalil",
+          "odata_bind": "rek_schvalil@odata.bind",
+          "odata_hodnota": "_rek_schvalil_value"
+        },
+        "rek_shodasai": {
+          "zobrazovany_nazev": "Shoda s AI",
+          "typ": "Yes/No"
+        },
+        "rek_stav": {
+          "zobrazovany_nazev": "Stav",
+          "typ": "Choice",
+          "choice": {
+            "100000000": "Nová",
+            "100000001": "Čeká na doplnění",
+            "100000002": "Posuzuje se",
+            "100000003": "U technika",
+            "100000004": "Ke schválení",
+            "100000005": "Rozhodnuto",
+            "100000006": "Vyřízeno",
+            "100000007": "Po lhůtě"
+          }
+        },
+        "rek_typvady": {
+          "zobrazovany_nazev": "Typ vady",
+          "typ": "Lookup",
+          "cil": "rek_typvady",
+          "navigace": "rek_typvady",
+          "odata_bind": "rek_typvady@odata.bind",
+          "odata_hodnota": "_rek_typvady_value"
+        },
+        "rek_uplatnenodne": {
+          "zobrazovany_nazev": "Uplatněno dne",
+          "typ": "Date only"
+        },
+        "rek_vyrizuje": {
+          "zobrazovany_nazev": "Vyřizuje",
+          "typ": "Lookup",
+          "cil": "systemuser",
+          "navigace": "rek_vyrizuje",
+          "odata_bind": "rek_vyrizuje@odata.bind",
+          "odata_hodnota": "_rek_vyrizuje_value"
+        },
+        "rek_vzaruce": {
+          "zobrazovany_nazev": "V záruce",
+          "typ": "Yes/No"
+        },
+        "rek_zakaznik": {
+          "zobrazovany_nazev": "Zákazník",
+          "typ": "Text"
+        },
+        "rek_zbyvadni": {
+          "zobrazovany_nazev": "Zbývá dní",
+          "typ": "Whole number"
+        },
+        "rek_zeme": {
+          "zobrazovany_nazev": "Země",
+          "typ": "Choice",
+          "choice": {
+            "100000000": "Česko",
+            "100000001": "Slovensko"
+          }
+        }
+      }
+    }
+  },
+  "choice": {
+    "Kategorie": {
+      "100000000": "Kávovary a kuchyně",
+      "100000001": "Vysavače",
+      "100000002": "Praní a mytí",
+      "100000003": "Příslušenství a díly"
+    },
+    "Země": {
+      "100000000": "Česko",
+      "100000001": "Slovensko"
+    },
+    "Měna": {
+      "100000000": "CZK",
+      "100000001": "EUR"
+    },
+    "Stav reklamace": {
+      "100000000": "Nová",
+      "100000001": "Čeká na doplnění",
+      "100000002": "Posuzuje se",
+      "100000003": "U technika",
+      "100000004": "Ke schválení",
+      "100000005": "Rozhodnuto",
+      "100000006": "Vyřízeno",
+      "100000007": "Po lhůtě"
+    },
+    "Kanál": {
+      "100000000": "E-mail",
+      "100000001": "Formulář e-shopu",
+      "100000002": "Telefon",
+      "100000003": "Prodejna"
+    },
+    "Jazyk": {
+      "100000000": "Čeština",
+      "100000001": "Slovenština"
+    },
+    "Řešení": {
+      "100000000": "Oprava",
+      "100000001": "Výměna",
+      "100000002": "Vrácení peněz",
+      "100000003": "Sleva",
+      "100000004": "Zamítnuto"
+    },
+    "Návrh AI": {
+      "100000000": "Oprava",
+      "100000001": "Výměna",
+      "100000002": "Vrácení peněz",
+      "100000003": "Sleva",
+      "100000004": "Zamítnuto",
+      "100000005": "K technikovi"
+    },
+    "Jistota": {
+      "100000000": "Vysoká",
+      "100000001": "Střední",
+      "100000002": "Nízká"
+    }
+  },
+  "persony": {
+    "Klára": {
+      "role": "specialistka reklamací",
+      "systemuserid": "7efba0aa-f2d4-f111-a05b-6045bd0965dc",
+      "ucet": "LabAdmin12@M365x29026754.OnMicrosoft.com"
+    },
+    "Pavel": {
+      "role": "servisní technik",
+      "systemuserid": "7efba0aa-f2d4-f111-a05b-6045bd0965dc",
+      "ucet": "LabAdmin12@M365x29026754.OnMicrosoft.com"
+    },
+    "Jitka": {
+      "role": "vedoucí zákaznického centra",
+      "systemuserid": "7efba0aa-f2d4-f111-a05b-6045bd0965dc",
+      "ucet": "LabAdmin12@M365x29026754.OnMicrosoft.com"
+    },
+    "Radek": {
+      "role": "kvalita",
+      "systemuserid": "7efba0aa-f2d4-f111-a05b-6045bd0965dc",
+      "ucet": "LabAdmin12@M365x29026754.OnMicrosoft.com"
+    }
+  },
+  "vyzva": {
+    "kod": "V2",
+    "nazev": "Kulance po záruce",
+    "sloupce": {
+      "rek_kulance": {
+        "zobrazovany_nazev": "Doporučena kulance",
+        "typ": "Yes/No",
+        "tabulka": "rek_reklamace"
+      },
+      "rek_kulanceduvod": {
+        "zobrazovany_nazev": "Důvod kulance",
+        "typ": "Multiline",
+        "tabulka": "rek_reklamace"
+      }
+    }
+  },
+  "poznamky": [
+    "Tým má jen jeden lab účet: všechny persony (Klára, Pavel, Jitka, Radek) jsou namapované na LabAdmin12.",
+    "rek_lhuta je calculated: AddDays(30, rek_uplatnenodne).",
+    "rek_zbyvadni NENÍ calculated (Dataverse nedovolí Now() se sloupcem Date only). Je to prosté celé číslo a v Dataverse zůstává prázdné; zbývající dny počítejte v aplikaci, flow a reportu jako rek_lhuta - dnes (záložní postup ze zadání).",
+    "Autonumber rek_reklamace.rek_cislo: R-{DATETIMEUTC:yyyy}-{SEQNUM:5}, seed nastaven na 14231.",
+    "Výchozí hodnota Záruka 24 není v metadatech (Whole number ji nepodporuje), doplňuje ji import / aplikace."
+  ]
+}
