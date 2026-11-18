@@ -1,12 +1,12 @@
 {
   "cs": {
-    "potvrzeni": { "predmet": "Reklamace {{cislo}} přijata", "nadpis": "Vaši reklamaci řešíme", "text": "Omlouváme se za komplikace, které vám porucha způsobila. Vaši reklamaci {{cislo}} jsme přijali a už ji má na starosti naše specialistka. Vyřídíme ji nejpozději do {{termin}} a o každém kroku vám dáme vědět." },
-    "vyzva":     { "predmet": "Reklamace {{cislo}}: prosíme o doplnění", "nadpis": "Prosíme o doplnění", "text": "Abychom mohli reklamaci {{cislo}} posoudit, pošlete nám prosím ještě: {{chybi}}. Lhůta pro vyřízení běží od přijetí reklamace, nic tím neztrácíte. Omlouváme se za komplikace a děkujeme za pomoc." },
+    "potvrzeni": { "predmet": "Reklamace {{cislo}} přijata", "nadpis": "Vaši reklamaci řešíme", "text": "Omlouváme se za komplikace, které vám porucha způsobila. Vaši reklamaci <span style=\"white-space:nowrap;\">{{cislo}}</span> jsme přijali a už ji má na starosti naše specialistka. Vyřídíme ji nejpozději do {{termin}} a o každém kroku vám dáme vědět." },
+    "vyzva":     { "predmet": "Reklamace {{cislo}}: prosíme o doplnění", "nadpis": "Prosíme o doplnění", "text": "Abychom mohli reklamaci <span style=\"white-space:nowrap;\">{{cislo}}</span> posoudit, pošlete nám prosím ještě: {{chybi}}. Lhůta pro vyřízení běží od přijetí reklamace, nic tím neztrácíte. Omlouváme se za komplikace a děkujeme za pomoc." },
     "osloveni": "Dobrý den,", "podpis": "Zákaznické centrum Pohoda", "paticka": "Pohoda Spotřebiče · zákaznická linka 800 222 333 (po–pá 8–18, v prosinci i so 9–14) · pohodaspotrebice.cz/reklamace"
   },
   "sk": {
-    "potvrzeni": { "predmet": "Reklamácia {{cislo}} prijatá", "nadpis": "Vašu reklamáciu riešime", "text": "Ospravedlňujeme sa za komplikácie, ktoré vám porucha spôsobila. Vašu reklamáciu {{cislo}} sme prijali a už ju má na starosti naša špecialistka. Vybavíme ju najneskôr do {{termin}} a o každom kroku vás budeme informovať." },
-    "vyzva":     { "predmet": "Reklamácia {{cislo}}: prosíme o doplnenie", "nadpis": "Prosíme o doplnenie", "text": "Aby sme mohli reklamáciu {{cislo}} posúdiť, pošlite nám, prosím, ešte: {{chybi}}. Lehota na vybavenie plynie od prijatia reklamácie, nič tým nestrácate. Ospravedlňujeme sa za komplikácie a ďakujeme za pomoc." },
+    "potvrzeni": { "predmet": "Reklamácia {{cislo}} prijatá", "nadpis": "Vašu reklamáciu riešime", "text": "Ospravedlňujeme sa za komplikácie, ktoré vám porucha spôsobila. Vašu reklamáciu <span style=\"white-space:nowrap;\">{{cislo}}</span> sme prijali a už ju má na starosti naša špecialistka. Vybavíme ju najneskôr do {{termin}} a o každom kroku vás budeme informovať." },
+    "vyzva":     { "predmet": "Reklamácia {{cislo}}: prosíme o doplnenie", "nadpis": "Prosíme o doplnenie", "text": "Aby sme mohli reklamáciu <span style=\"white-space:nowrap;\">{{cislo}}</span> posúdiť, pošlite nám, prosím, ešte: {{chybi}}. Lehota na vybavenie plynie od prijatia reklamácie, nič tým nestrácate. Ospravedlňujeme sa za komplikácie a ďakujeme za pomoc." },
     "osloveni": "Dobrý deň,", "podpis": "Zákaznícke centrum Pohoda", "paticka": "Pohoda Spotřebiče · zákaznícka linka 0800 222 333 (po – pi 8 – 18, v decembri aj so 9 – 14) · pohodaspotrebice.sk/reklamacie"
   }
 }
