@@ -29,7 +29,16 @@ V2 Kulance po záruce (přidělená: tým 12, ((12 - 1) mod 5) + 1 = 2): u rekla
 Nové sloupce: Doporučena kulance, Yes/No (výchozí Ne), rek_kulance, tabulka Reklamace; Důvod kulance, Multiline 2000, rek_kulanceduvod, tabulka Reklamace (založí část 1 v kroku 7)
 
 ## Aplikace
-(vyplní část 2)
+- Název aplikace: Pohoda Servis
+- Fronta (P1): C seznam vlevo a detail vpravo na jedné obrazovce (specialistky často na dvou monitorech, Klára nepřepíná stránky)
+- Navigace (P2): C horní lišta a vpravo rychlá akce „+ Nový požadavek“ s klávesovou zkratkou N
+- Fronta navíc (P3): dny ve stavu (z `modifiedon`), štítek V záruce / Mimo záruku
+- Persony (P4): Pavel velké karty pro tablet u zákazníka doma, fotka přes celou šířku, tlačítka aspoň 56 px; Jitka nahoře ohrožené lhůty (≤ 5 dní), pod nimi U vedoucí (Ke schválení), kulance zvýrazněné
+- Vlastní prvek (P5): c kalendář lhůt na 14 dní dopředu nad frontou
+- Texty (P6): věcné vstřícné, tykání; prázdné stavy „Všechny požadavky jsou v termínu.“, „U vedoucí nic nečeká.“, „V servisu teď nic není.“; potvrzení „Požadavek R-… je založený a ve frontě.“, „Rozhodnutí uloženo, jde ke schválení vedoucí.“
+- Výzva v aplikaci: V2 v detailu u požadavku mimo záruku blok Kulance s Doporučena kulance (`rek_kulance`) a Důvod kulance (`rek_kulanceduvod`) od agenta; pravidlo kulance do 3 měsíců po záruce, u KV-450 a KV-800 do 6 měsíců, oprava zdarma, zákazník platí jen díl; uznání mimo záruku jde ke schválení vedoucí (stav U vedoucí, jádro). Sloupce z `reklamace-schema.json`, sekce `"vyzva"`.
+- Navíc na přání týmu: hledání ve frontě (číslo, zákazník, e-mail, produkt).
+- Stav: aplikace nasazená v Training12 (https://apps.powerapps.com/play/e/a6e76ae4-41cc-e656-b96f-bd359611a015/app/e9b1056d-f22f-45e7-b7d9-96691c633eb6), kód v `reklamace-app/`, snímky v `demo/snimky/`. Sdílení s dalším lab účtem neproběhlo (tým má jen LabAdmin12).
 
 ## Automatizace
 (vyplní část 3)

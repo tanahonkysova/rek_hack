@@ -1,0 +1,1025 @@
+{
+  "name": "rek_reklamace",
+  "title": "Reklamace",
+  "schema": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "x-ms-dataverse-entity": true,
+      "x-ms-dataverse-entityset": "rek_reklamaces",
+      "x-ms-dataverse-primary-id": "rek_reklamaceid",
+      "x-ms-dataverse-primary-name": "rek_cislo",
+      "properties": {
+        "createdby": {
+          "type": "string",
+          "title": "Created By",
+          "x-ms-dataverse-attribute": "createdby",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "CreatedBy",
+          "x-ms-dataverse-navigation-properties": [
+            "createdby"
+          ],
+          "x-ms-read-only": true
+        },
+        "createdbyname": {
+          "type": "string",
+          "title": "createdbyname",
+          "x-ms-dataverse-attribute": "createdbyname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "CreatedByName",
+          "x-ms-dataverse-attribute-of": "createdby",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "createdbyyominame": {
+          "type": "string",
+          "title": "createdbyyominame",
+          "x-ms-dataverse-attribute": "createdbyyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "CreatedByYomiName",
+          "x-ms-dataverse-attribute-of": "createdby",
+          "x-ms-read-only": true,
+          "required": true,
+          "maxLength": 100
+        },
+        "createdon": {
+          "type": "string",
+          "title": "Created On",
+          "x-ms-dataverse-attribute": "createdon",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "CreatedOn",
+          "x-ms-read-only": true
+        },
+        "createdonbehalfby": {
+          "type": "string",
+          "title": "Created By (Delegate)",
+          "x-ms-dataverse-attribute": "createdonbehalfby",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "CreatedOnBehalfBy",
+          "x-ms-dataverse-navigation-properties": [
+            "createdonbehalfby"
+          ],
+          "x-ms-read-only": true
+        },
+        "createdonbehalfbyname": {
+          "type": "string",
+          "title": "createdonbehalfbyname",
+          "x-ms-dataverse-attribute": "createdonbehalfbyname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "CreatedOnBehalfByName",
+          "x-ms-dataverse-attribute-of": "createdonbehalfby",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "createdonbehalfbyyominame": {
+          "type": "string",
+          "title": "createdonbehalfbyyominame",
+          "x-ms-dataverse-attribute": "createdonbehalfbyyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "CreatedOnBehalfByYomiName",
+          "x-ms-dataverse-attribute-of": "createdonbehalfby",
+          "x-ms-read-only": true,
+          "required": true,
+          "maxLength": 100
+        },
+        "importsequencenumber": {
+          "type": "string",
+          "title": "Import Sequence Number",
+          "x-ms-dataverse-attribute": "importsequencenumber",
+          "x-ms-dataverse-type": "IntegerType",
+          "x-ms-schema-name": "ImportSequenceNumber"
+        },
+        "modifiedby": {
+          "type": "string",
+          "title": "Modified By",
+          "x-ms-dataverse-attribute": "modifiedby",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "ModifiedBy",
+          "x-ms-dataverse-navigation-properties": [
+            "modifiedby"
+          ],
+          "x-ms-read-only": true
+        },
+        "modifiedbyname": {
+          "type": "string",
+          "title": "modifiedbyname",
+          "x-ms-dataverse-attribute": "modifiedbyname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "ModifiedByName",
+          "x-ms-dataverse-attribute-of": "modifiedby",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "modifiedbyyominame": {
+          "type": "string",
+          "title": "modifiedbyyominame",
+          "x-ms-dataverse-attribute": "modifiedbyyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "ModifiedByYomiName",
+          "x-ms-dataverse-attribute-of": "modifiedby",
+          "x-ms-read-only": true,
+          "required": true,
+          "maxLength": 100
+        },
+        "modifiedon": {
+          "type": "string",
+          "title": "Modified On",
+          "x-ms-dataverse-attribute": "modifiedon",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "ModifiedOn",
+          "x-ms-read-only": true
+        },
+        "modifiedonbehalfby": {
+          "type": "string",
+          "title": "Modified By (Delegate)",
+          "x-ms-dataverse-attribute": "modifiedonbehalfby",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "ModifiedOnBehalfBy",
+          "x-ms-dataverse-navigation-properties": [
+            "modifiedonbehalfby"
+          ],
+          "x-ms-read-only": true
+        },
+        "modifiedonbehalfbyname": {
+          "type": "string",
+          "title": "modifiedonbehalfbyname",
+          "x-ms-dataverse-attribute": "modifiedonbehalfbyname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "ModifiedOnBehalfByName",
+          "x-ms-dataverse-attribute-of": "modifiedonbehalfby",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "modifiedonbehalfbyyominame": {
+          "type": "string",
+          "title": "modifiedonbehalfbyyominame",
+          "x-ms-dataverse-attribute": "modifiedonbehalfbyyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "ModifiedOnBehalfByYomiName",
+          "x-ms-dataverse-attribute-of": "modifiedonbehalfby",
+          "x-ms-read-only": true,
+          "required": true,
+          "maxLength": 100
+        },
+        "overriddencreatedon": {
+          "type": "string",
+          "title": "Record Created On",
+          "x-ms-dataverse-attribute": "overriddencreatedon",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "OverriddenCreatedOn"
+        },
+        "ownerid": {
+          "type": "string",
+          "title": "Owner",
+          "x-ms-dataverse-attribute": "ownerid",
+          "x-ms-dataverse-type": "OwnerType",
+          "x-ms-schema-name": "OwnerId",
+          "required": true
+        },
+        "owneridname": {
+          "type": "string",
+          "title": "owneridname",
+          "x-ms-dataverse-attribute": "owneridname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "OwnerIdName",
+          "x-ms-dataverse-attribute-of": "ownerid",
+          "x-ms-read-only": true,
+          "required": true,
+          "maxLength": 100
+        },
+        "owneridtype": {
+          "type": "string",
+          "title": "owneridtype",
+          "x-ms-dataverse-attribute": "owneridtype",
+          "x-ms-dataverse-type": "EntityNameType",
+          "x-ms-schema-name": "OwnerIdType",
+          "x-ms-dataverse-attribute-of": "ownerid",
+          "required": true
+        },
+        "owneridyominame": {
+          "type": "string",
+          "title": "owneridyominame",
+          "x-ms-dataverse-attribute": "owneridyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "OwnerIdYomiName",
+          "x-ms-dataverse-attribute-of": "ownerid",
+          "x-ms-read-only": true,
+          "required": true,
+          "maxLength": 100
+        },
+        "owningbusinessunit": {
+          "type": "string",
+          "title": "Owning Business Unit",
+          "x-ms-dataverse-attribute": "owningbusinessunit",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "OwningBusinessUnit",
+          "x-ms-dataverse-navigation-properties": [
+            "owningbusinessunit"
+          ],
+          "x-ms-read-only": true
+        },
+        "owningbusinessunitname": {
+          "type": "string",
+          "title": "owningbusinessunitname",
+          "x-ms-dataverse-attribute": "owningbusinessunitname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "OwningBusinessUnitName",
+          "x-ms-dataverse-attribute-of": "owningbusinessunit",
+          "x-ms-read-only": true,
+          "required": true,
+          "maxLength": 100
+        },
+        "owningteam": {
+          "type": "string",
+          "title": "Owning Team",
+          "x-ms-dataverse-attribute": "owningteam",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "OwningTeam",
+          "x-ms-dataverse-navigation-properties": [
+            "owningteam"
+          ],
+          "x-ms-read-only": true
+        },
+        "owninguser": {
+          "type": "string",
+          "title": "Owning User",
+          "x-ms-dataverse-attribute": "owninguser",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "OwningUser",
+          "x-ms-dataverse-navigation-properties": [
+            "owninguser"
+          ],
+          "x-ms-read-only": true
+        },
+        "rek_chybejici": {
+          "type": "string",
+          "title": "Chybějící údaje",
+          "x-ms-dataverse-attribute": "rek_chybejici",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "rek_chybejici",
+          "maxLength": 300
+        },
+        "rek_cislo": {
+          "type": "string",
+          "title": "Číslo",
+          "x-ms-dataverse-attribute": "rek_cislo",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "rek_cislo",
+          "x-ms-dataverse-primary-name": true,
+          "maxLength": 100
+        },
+        "rek_datumvyrizeni": {
+          "type": "string",
+          "title": "Datum vyřízení",
+          "x-ms-dataverse-attribute": "rek_datumvyrizeni",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "rek_datumvyrizeni"
+        },
+        "rek_email": {
+          "type": "string",
+          "title": "E-mail zákazníka",
+          "x-ms-dataverse-attribute": "rek_email",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "rek_email",
+          "maxLength": 100
+        },
+        "rek_fotka": {
+          "type": "string",
+          "title": "Fotka vady",
+          "x-ms-dataverse-attribute": "rek_fotka",
+          "x-ms-dataverse-type": "ImageType",
+          "x-ms-schema-name": "rek_fotka",
+          "x-ms-dataverse-attribute-of": "rek_fotkaid"
+        },
+        "rek_fotka_timestamp": {
+          "type": "string",
+          "title": "rek_fotka_timestamp",
+          "x-ms-dataverse-attribute": "rek_fotka_timestamp",
+          "x-ms-dataverse-type": "BigIntType",
+          "x-ms-schema-name": "rek_fotka_Timestamp",
+          "x-ms-dataverse-attribute-of": "rek_fotkaid",
+          "x-ms-read-only": true
+        },
+        "rek_fotka_url": {
+          "type": "string",
+          "title": "rek_fotka_url",
+          "x-ms-dataverse-attribute": "rek_fotka_url",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "rek_fotka_URL",
+          "x-ms-dataverse-attribute-of": "rek_fotkaid",
+          "x-ms-read-only": true,
+          "maxLength": 200
+        },
+        "rek_fotkaid": {
+          "type": "string",
+          "title": "rek_fotkaid",
+          "x-ms-dataverse-attribute": "rek_fotkaid",
+          "x-ms-dataverse-type": "UniqueidentifierType",
+          "x-ms-schema-name": "rek_fotkaId",
+          "x-ms-read-only": true
+        },
+        "rek_jazyk": {
+          "type": "string",
+          "title": "Jazyk",
+          "x-ms-dataverse-attribute": "rek_jazyk",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "rek_jazyk",
+          "enum": [
+            "Čeština",
+            "Slovenština"
+          ],
+          "x-ms-enum-values": [
+            100000000,
+            100000001
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "dffc1891-33e3-f111-84e8-000d3a5bbb5b",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Jazyk",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "rek_jazykname": {
+          "type": "string",
+          "title": "rek_jazykname",
+          "x-ms-dataverse-attribute": "rek_jazykname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "rek_jazykName",
+          "x-ms-dataverse-attribute-of": "rek_jazyk",
+          "x-ms-read-only": true
+        },
+        "rek_jistota": {
+          "type": "string",
+          "title": "Jistota AI",
+          "x-ms-dataverse-attribute": "rek_jistota",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "rek_jistota",
+          "enum": [
+            "Vysoká",
+            "Střední",
+            "Nízká"
+          ],
+          "x-ms-enum-values": [
+            100000000,
+            100000001,
+            100000002
+          ],
+          "Color": [
+            null,
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "3f1eace6-33e3-f111-84e8-000d3a5bbb5b",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Jistota AI",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "rek_jistotaname": {
+          "type": "string",
+          "title": "rek_jistotaname",
+          "x-ms-dataverse-attribute": "rek_jistotaname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "rek_jistotaName",
+          "x-ms-dataverse-attribute-of": "rek_jistota",
+          "x-ms-read-only": true
+        },
+        "rek_kanal": {
+          "type": "string",
+          "title": "Kanál",
+          "x-ms-dataverse-attribute": "rek_kanal",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "rek_kanal",
+          "enum": [
+            "E-mail",
+            "Formulář e-shopu",
+            "Telefon",
+            "Prodejna"
+          ],
+          "x-ms-enum-values": [
+            100000000,
+            100000001,
+            100000002,
+            100000003
+          ],
+          "Color": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "d6d80b8a-33e3-f111-84e8-000d3a5bbb5b",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Kanál",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "rek_kanalname": {
+          "type": "string",
+          "title": "rek_kanalname",
+          "x-ms-dataverse-attribute": "rek_kanalname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "rek_kanalName",
+          "x-ms-dataverse-attribute-of": "rek_kanal",
+          "x-ms-read-only": true
+        },
+        "rek_komentar": {
+          "type": "string",
+          "title": "Komentář schvalovatele",
+          "x-ms-dataverse-attribute": "rek_komentar",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "rek_komentar",
+          "maxLength": 2000
+        },
+        "rek_kulance": {
+          "type": "string",
+          "title": "Doporučena kulance",
+          "x-ms-dataverse-attribute": "rek_kulance",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "rek_kulance",
+          "enum": [
+            "Ne",
+            "Ano"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "0e546132-3de3-f111-84e8-000d3a5bbb5b",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Doporučena kulance",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "rek_kulanceduvod": {
+          "type": "string",
+          "title": "Důvod kulance",
+          "x-ms-dataverse-attribute": "rek_kulanceduvod",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "rek_kulanceduvod",
+          "maxLength": 2000
+        },
+        "rek_kulancename": {
+          "type": "string",
+          "title": "rek_kulancename",
+          "x-ms-dataverse-attribute": "rek_kulancename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "rek_kulanceName",
+          "x-ms-dataverse-attribute-of": "rek_kulance",
+          "x-ms-read-only": true
+        },
+        "rek_lhuta": {
+          "type": "string",
+          "title": "Lhůta",
+          "x-ms-dataverse-attribute": "rek_lhuta",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "rek_lhuta",
+          "x-ms-read-only": true
+        },
+        "rek_naklady": {
+          "type": "string",
+          "title": "Náklady řešení",
+          "x-ms-dataverse-attribute": "rek_naklady",
+          "x-ms-dataverse-type": "DecimalType",
+          "x-ms-schema-name": "rek_naklady"
+        },
+        "rek_navrhai": {
+          "type": "string",
+          "title": "Návrh AI",
+          "x-ms-dataverse-attribute": "rek_navrhai",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "rek_navrhai",
+          "enum": [
+            "Oprava",
+            "Výměna",
+            "Vrácení peněz",
+            "Sleva",
+            "Zamítnuto",
+            "K technikovi"
+          ],
+          "x-ms-enum-values": [
+            100000000,
+            100000001,
+            100000002,
+            100000003,
+            100000004,
+            100000005
+          ],
+          "Color": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "361eace6-33e3-f111-84e8-000d3a5bbb5b",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Návrh AI",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "rek_navrhainame": {
+          "type": "string",
+          "title": "rek_navrhainame",
+          "x-ms-dataverse-attribute": "rek_navrhainame",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "rek_navrhaiName",
+          "x-ms-dataverse-attribute-of": "rek_navrhai",
+          "x-ms-read-only": true
+        },
+        "rek_navrhoduvodneni": {
+          "type": "string",
+          "title": "Odůvodnění návrhu",
+          "x-ms-dataverse-attribute": "rek_navrhoduvodneni",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "rek_navrhoduvodneni",
+          "maxLength": 4000
+        },
+        "rek_objednavka": {
+          "type": "string",
+          "title": "Objednávka",
+          "x-ms-dataverse-attribute": "rek_objednavka",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "rek_objednavka",
+          "x-ms-dataverse-navigation-properties": [
+            "rek_objednavka"
+          ]
+        },
+        "rek_objednavkaname": {
+          "type": "string",
+          "title": "rek_objednavkaname",
+          "x-ms-dataverse-attribute": "rek_objednavkaname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "rek_objednavkaName",
+          "x-ms-dataverse-attribute-of": "rek_objednavka",
+          "x-ms-read-only": true,
+          "maxLength": 850
+        },
+        "rek_oduvodneni": {
+          "type": "string",
+          "title": "Odůvodnění rozhodnutí",
+          "x-ms-dataverse-attribute": "rek_oduvodneni",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "rek_oduvodneni",
+          "maxLength": 4000
+        },
+        "rek_popiscesky": {
+          "type": "string",
+          "title": "Popis česky",
+          "x-ms-dataverse-attribute": "rek_popiscesky",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "rek_popiscesky",
+          "maxLength": 2000
+        },
+        "rek_popisfotky": {
+          "type": "string",
+          "title": "Popis fotky",
+          "x-ms-dataverse-attribute": "rek_popisfotky",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "rek_popisfotky",
+          "maxLength": 2000
+        },
+        "rek_popiszakaznika": {
+          "type": "string",
+          "title": "Popis zákazníka",
+          "x-ms-dataverse-attribute": "rek_popiszakaznika",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "rek_popiszakaznika",
+          "maxLength": 10000
+        },
+        "rek_posudek": {
+          "type": "string",
+          "title": "Posudek technika",
+          "x-ms-dataverse-attribute": "rek_posudek",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "rek_posudek",
+          "maxLength": 4000
+        },
+        "rek_produkt": {
+          "type": "string",
+          "title": "Produkt",
+          "x-ms-dataverse-attribute": "rek_produkt",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "rek_produkt",
+          "x-ms-dataverse-navigation-properties": [
+            "rek_produkt"
+          ]
+        },
+        "rek_produktname": {
+          "type": "string",
+          "title": "rek_produktname",
+          "x-ms-dataverse-attribute": "rek_produktname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "rek_produktName",
+          "x-ms-dataverse-attribute-of": "rek_produkt",
+          "x-ms-read-only": true,
+          "maxLength": 850
+        },
+        "rek_reklamaceid": {
+          "type": "string",
+          "title": "Reklamace",
+          "x-ms-dataverse-attribute": "rek_reklamaceid",
+          "x-ms-dataverse-type": "UniqueidentifierType",
+          "x-ms-schema-name": "rek_reklamaceId",
+          "x-ms-dataverse-primary-id": true,
+          "required": true,
+          "x-ms-keyType": "primary"
+        },
+        "rek_rozhodnuti": {
+          "type": "string",
+          "title": "Rozhodnutí",
+          "x-ms-dataverse-attribute": "rek_rozhodnuti",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "rek_rozhodnuti",
+          "enum": [
+            "Oprava",
+            "Výměna",
+            "Vrácení peněz",
+            "Sleva",
+            "Zamítnuto"
+          ],
+          "x-ms-enum-values": [
+            100000000,
+            100000001,
+            100000002,
+            100000003,
+            100000004
+          ],
+          "Color": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "c5c4e9ec-33e3-f111-84e8-000d3a5bbb5b",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Rozhodnutí",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "rek_rozhodnutiname": {
+          "type": "string",
+          "title": "rek_rozhodnutiname",
+          "x-ms-dataverse-attribute": "rek_rozhodnutiname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "rek_rozhodnutiName",
+          "x-ms-dataverse-attribute-of": "rek_rozhodnuti",
+          "x-ms-read-only": true
+        },
+        "rek_schvalil": {
+          "type": "string",
+          "title": "Schválil",
+          "x-ms-dataverse-attribute": "rek_schvalil",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "rek_schvalil",
+          "x-ms-dataverse-navigation-properties": [
+            "rek_schvalil"
+          ]
+        },
+        "rek_schvalilname": {
+          "type": "string",
+          "title": "rek_schvalilname",
+          "x-ms-dataverse-attribute": "rek_schvalilname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "rek_schvalilName",
+          "x-ms-dataverse-attribute-of": "rek_schvalil",
+          "x-ms-read-only": true,
+          "maxLength": 200
+        },
+        "rek_schvalilyominame": {
+          "type": "string",
+          "title": "rek_schvalilyominame",
+          "x-ms-dataverse-attribute": "rek_schvalilyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "rek_schvalilYomiName",
+          "x-ms-dataverse-attribute-of": "rek_schvalil",
+          "x-ms-read-only": true,
+          "maxLength": 200
+        },
+        "rek_shodasai": {
+          "type": "string",
+          "title": "Shoda s AI",
+          "x-ms-dataverse-attribute": "rek_shodasai",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "rek_shodasai",
+          "enum": [
+            "Ne",
+            "Ano"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "db31b6f9-33e3-f111-84e8-000d3a5bbb5b",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Shoda s AI",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "rek_shodasainame": {
+          "type": "string",
+          "title": "rek_shodasainame",
+          "x-ms-dataverse-attribute": "rek_shodasainame",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "rek_shodasaiName",
+          "x-ms-dataverse-attribute-of": "rek_shodasai",
+          "x-ms-read-only": true
+        },
+        "rek_stav": {
+          "type": "string",
+          "title": "Stav",
+          "x-ms-dataverse-attribute": "rek_stav",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "rek_stav",
+          "required": true,
+          "enum": [
+            "Nová",
+            "Čeká na doplnění",
+            "Posuzuje se",
+            "U technika",
+            "Ke schválení",
+            "Rozhodnuto",
+            "Vyřízeno",
+            "Po lhůtě"
+          ],
+          "x-ms-enum-values": [
+            100000000,
+            100000001,
+            100000002,
+            100000003,
+            100000004,
+            100000005,
+            100000006,
+            100000007
+          ],
+          "Color": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "1995a674-33e3-f111-84e8-000d3a5bbb5b",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Stav",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "rek_stavname": {
+          "type": "string",
+          "title": "rek_stavname",
+          "x-ms-dataverse-attribute": "rek_stavname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "rek_stavName",
+          "x-ms-dataverse-attribute-of": "rek_stav",
+          "x-ms-read-only": true
+        },
+        "rek_typvady": {
+          "type": "string",
+          "title": "Typ vady",
+          "x-ms-dataverse-attribute": "rek_typvady",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "rek_typvady",
+          "x-ms-dataverse-navigation-properties": [
+            "rek_typvady"
+          ]
+        },
+        "rek_typvadyname": {
+          "type": "string",
+          "title": "rek_typvadyname",
+          "x-ms-dataverse-attribute": "rek_typvadyname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "rek_typvadyName",
+          "x-ms-dataverse-attribute-of": "rek_typvady",
+          "x-ms-read-only": true,
+          "maxLength": 850
+        },
+        "rek_uplatnenodne": {
+          "type": "string",
+          "title": "Uplatněno dne",
+          "x-ms-dataverse-attribute": "rek_uplatnenodne",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "rek_uplatnenodne"
+        },
+        "rek_vyrizuje": {
+          "type": "string",
+          "title": "Vyřizuje",
+          "x-ms-dataverse-attribute": "rek_vyrizuje",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "rek_vyrizuje",
+          "x-ms-dataverse-navigation-properties": [
+            "rek_vyrizuje"
+          ]
+        },
+        "rek_vyrizujename": {
+          "type": "string",
+          "title": "rek_vyrizujename",
+          "x-ms-dataverse-attribute": "rek_vyrizujename",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "rek_vyrizujeName",
+          "x-ms-dataverse-attribute-of": "rek_vyrizuje",
+          "x-ms-read-only": true,
+          "maxLength": 200
+        },
+        "rek_vyrizujeyominame": {
+          "type": "string",
+          "title": "rek_vyrizujeyominame",
+          "x-ms-dataverse-attribute": "rek_vyrizujeyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "rek_vyrizujeYomiName",
+          "x-ms-dataverse-attribute-of": "rek_vyrizuje",
+          "x-ms-read-only": true,
+          "maxLength": 200
+        },
+        "rek_vzaruce": {
+          "type": "string",
+          "title": "V záruce",
+          "x-ms-dataverse-attribute": "rek_vzaruce",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "rek_vzaruce",
+          "enum": [
+            "Ne",
+            "Ano"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "99d6b6df-33e3-f111-84e8-000d3a5bbb5b",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "V záruce",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "rek_vzarucename": {
+          "type": "string",
+          "title": "rek_vzarucename",
+          "x-ms-dataverse-attribute": "rek_vzarucename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "rek_vzaruceName",
+          "x-ms-dataverse-attribute-of": "rek_vzaruce",
+          "x-ms-read-only": true
+        },
+        "rek_zakaznik": {
+          "type": "string",
+          "title": "Zákazník",
+          "x-ms-dataverse-attribute": "rek_zakaznik",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "rek_zakaznik",
+          "maxLength": 100
+        },
+        "rek_zbyvadni": {
+          "type": "string",
+          "title": "Zbývá dní",
+          "x-ms-dataverse-attribute": "rek_zbyvadni",
+          "x-ms-dataverse-type": "IntegerType",
+          "x-ms-schema-name": "rek_zbyvadni"
+        },
+        "rek_zeme": {
+          "type": "string",
+          "title": "Země",
+          "x-ms-dataverse-attribute": "rek_zeme",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "rek_zeme",
+          "enum": [
+            "Česko",
+            "Slovensko"
+          ],
+          "x-ms-enum-values": [
+            100000000,
+            100000001
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "dad80b8a-33e3-f111-84e8-000d3a5bbb5b",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Země",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "rek_zemename": {
+          "type": "string",
+          "title": "rek_zemename",
+          "x-ms-dataverse-attribute": "rek_zemename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "rek_zemeName",
+          "x-ms-dataverse-attribute-of": "rek_zeme",
+          "x-ms-read-only": true
+        },
+        "statecode": {
+          "type": "string",
+          "title": "Status",
+          "x-ms-dataverse-attribute": "statecode",
+          "x-ms-dataverse-type": "StateType",
+          "x-ms-schema-name": "statecode",
+          "required": true,
+          "enum": [
+            "Active",
+            "Inactive"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "1e741a68-33e3-f111-84e8-000d3a5bbb5b",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Status",
+          "x-ms-optionSetType": "State"
+        },
+        "statecodename": {
+          "type": "string",
+          "title": "statecodename",
+          "x-ms-dataverse-attribute": "statecodename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "statecodeName",
+          "x-ms-dataverse-attribute-of": "statecode",
+          "x-ms-read-only": true
+        },
+        "statuscode": {
+          "type": "string",
+          "title": "Status Reason",
+          "x-ms-dataverse-attribute": "statuscode",
+          "x-ms-dataverse-type": "StatusType",
+          "x-ms-schema-name": "statuscode",
+          "enum": [
+            "Active",
+            "Inactive"
+          ],
+          "x-ms-enum-values": [
+            1,
+            2
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "28741a68-33e3-f111-84e8-000d3a5bbb5b",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Status Reason",
+          "x-ms-optionSetType": "Status"
+        },
+        "statuscodename": {
+          "type": "string",
+          "title": "statuscodename",
+          "x-ms-dataverse-attribute": "statuscodename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "statuscodeName",
+          "x-ms-dataverse-attribute-of": "statuscode",
+          "x-ms-read-only": true
+        },
+        "timezoneruleversionnumber": {
+          "type": "string",
+          "title": "Time Zone Rule Version Number",
+          "x-ms-dataverse-attribute": "timezoneruleversionnumber",
+          "x-ms-dataverse-type": "IntegerType",
+          "x-ms-schema-name": "TimeZoneRuleVersionNumber"
+        },
+        "utcconversiontimezonecode": {
+          "type": "string",
+          "title": "UTC Conversion Time Zone Code",
+          "x-ms-dataverse-attribute": "utcconversiontimezonecode",
+          "x-ms-dataverse-type": "IntegerType",
+          "x-ms-schema-name": "UTCConversionTimeZoneCode"
+        },
+        "versionnumber": {
+          "type": "string",
+          "title": "Version Number",
+          "x-ms-dataverse-attribute": "versionnumber",
+          "x-ms-dataverse-type": "BigIntType",
+          "x-ms-schema-name": "VersionNumber",
+          "x-ms-read-only": true
+        }
+      },
+      "required": [
+        "createdbyyominame",
+        "createdonbehalfbyyominame",
+        "modifiedbyyominame",
+        "modifiedonbehalfbyyominame",
+        "ownerid",
+        "owneridname",
+        "owneridtype",
+        "owneridyominame",
+        "owningbusinessunitname",
+        "rek_reklamaceid",
+        "rek_stav",
+        "statecode"
+      ]
+    }
+  }
+}

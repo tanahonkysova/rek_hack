@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap');
+
+/* Pohoda Spotřebiče (smyšlená firma), charakter A hutná provozní */
+:root {
+  --brand-primary: #8A1538;
+  --brand-primary-contrast: #FFFFFF;   /* text na primární barvě */
+  --brand-secondary: #2F3A45;
+  --brand-accent: #E8B04A;
+  --brand-text: #1E252C;
+  --brand-text-muted: #5A6470;
+  --brand-bg: #F4F5F7;
+  --brand-surface: #FFFFFF;
+  --brand-border: #D5DAE0;
+  --brand-success: #1E7B45;
+  --brand-warning: #9A5A00;
+  --brand-danger: #C62828;
+  --brand-font: 'Nunito Sans', 'Segoe UI', Arial, sans-serif;
+  --brand-radius: 4px;
+  --lhuta-ok: #5A6470;
+  --lhuta-varovani: #9A5A00;
+  --lhuta-kriticka: #C62828;
+  --navrh-uznat: #1E7B45;
+  --navrh-technik: #9A5A00;
+  --navrh-zamitnout: #4A4F55;
+}

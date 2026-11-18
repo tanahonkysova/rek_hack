@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  "appId": "e9b1056d-f22f-45e7-b7d9-96691c633eb6",
+  "appDisplayName": "Pohoda Servis",
+  "region": "prod",
+  "appType": "CodeApp",
+  "environmentId": "a6e76ae4-41cc-e656-b96f-bd359611a015",
+  "description": " ",
+  "buildPath": "./dist",
+  "buildEntryPoint": "index.html",
+  "localAppUrl": "http://localhost:3000",
+  "logoPath": "Default",
+  "connectionReferences": {},
+  "databaseReferences": {
+    "default.cds": {
+      "dataSources": {
+        "reklamace": {
+          "entitySetName": "rek_reklamaces",
+          "logicalName": "rek_reklamace",
+          "isHidden": false
+        },
+        "produkty": {
+          "entitySetName": "rek_produkts",
+          "logicalName": "rek_produkt",
+          "isHidden": false
+        },
+        "objedn_vky": {
+          "entitySetName": "rek_objednavkas",
+          "logicalName": "rek_objednavka",
+          "isHidden": false
+        },
+        "typyvad": {
+          "entitySetName": "rek_typvadies",
+          "logicalName": "rek_typvady",
+          "isHidden": false
+        },
+        "users": {
+          "entitySetName": "systemusers",
+          "logicalName": "systemuser",
+          "isHidden": false
+        }
+      },
+      "environmentVariableName": ""
+    }
+  }
+}
