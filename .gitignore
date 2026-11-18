@@ -1,2 +1,6 @@
 # Velká videa (GitHub limit 100 MB)
 *.mp4
+
+# Python a Vite cache
+__pycache__/
+.vite/
