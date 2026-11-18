@@ -1,0 +1,13 @@
+{
+  "cislo_objednavky": "EO-SK-2026-005490",
+  "jmeno": "Monika Mikušová",
+  "email": "monika.mikusova@example.sk",
+  "kod_produktu": "MY-60",
+  "jazyk": "sk",
+  "kanal": "Formulář e-shopu",
+  "popis_cesky": "Myčka MY-60 při prvním mytí teče kolem rychlospojky přívodní hadice.",
+  "popis_fotky": "Voda uniká kolem rychlospojky hadice, těsnění je vidět posunuté.",
+  "typ_vady": "Únik vody",
+  "chybejici_udaje": [],
+  "nakup_mimo_eshop": false
+}

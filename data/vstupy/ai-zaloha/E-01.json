@@ -1,0 +1,13 @@
+{
+  "cislo_objednavky": "EO-CZ-2026-005407",
+  "jmeno": "Jana Růžičková",
+  "email": "jana.ruzickova@example.cz",
+  "kod_produktu": "KV-450",
+  "jazyk": "cs",
+  "kanal": "E-mail",
+  "popis_cesky": "Na espresso automatu KV-450 praskl plastový kryt ovládacího panelu po zapnutí, bez pádu nebo nárazu.",
+  "popis_fotky": "Prasklina přes plastový kryt ovládacího panelu, okraje čisté, bez stop nárazu.",
+  "typ_vady": "Výrobní vada materiálu",
+  "chybejici_udaje": [],
+  "nakup_mimo_eshop": false
+}

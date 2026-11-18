@@ -1,0 +1,16 @@
+{
+  "cislo_objednavky": null,
+  "jmeno": "Tereza Vaňková",
+  "email": "tereza.vankova@example.cz",
+  "kod_produktu": "HV-10",
+  "jazyk": "cs",
+  "kanal": "E-mail",
+  "popis_cesky": "Ruční vysavač HV-10 koupený v prodejně ElektroDům nejde nabít ani spustit.",
+  "popis_fotky": null,
+  "typ_vady": "Nefunkční elektrika nebo motor",
+  "chybejici_udaje": [
+    "doklad o koupi",
+    "fotka vady"
+  ],
+  "nakup_mimo_eshop": true
+}

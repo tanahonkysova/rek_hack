@@ -1,0 +1,15 @@
+{
+  "cislo_objednavky": "EO-CZ-2026-001177",
+  "jmeno": "Jakub Hájek",
+  "email": "jakub.hajek@example.cz",
+  "kod_produktu": "TV-25",
+  "jazyk": "cs",
+  "kanal": "E-mail",
+  "popis_cesky": "Tyčový vysavač TV-25 od včerejška nejde zapnout, i když je nabitý.",
+  "popis_fotky": null,
+  "typ_vady": "Nefunkční elektrika nebo motor",
+  "chybejici_udaje": [
+    "fotka vady"
+  ],
+  "nakup_mimo_eshop": false
+}

@@ -1,0 +1,16 @@
+{
+  "cislo_objednavky": null,
+  "jmeno": "Daniel Veselý",
+  "email": "daniel.vesely@example.cz",
+  "kod_produktu": "RV-50",
+  "jazyk": "cs",
+  "kanal": "E-mail",
+  "popis_cesky": "Robotický vysavač RV-50 se dva týdny nevrací do stanice a nenabíjí se.",
+  "popis_fotky": null,
+  "typ_vady": "Nefunkční elektrika nebo motor",
+  "chybejici_udaje": [
+    "číslo objednávky",
+    "fotka vady"
+  ],
+  "nakup_mimo_eshop": false
+}

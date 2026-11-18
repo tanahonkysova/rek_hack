@@ -1,0 +1,15 @@
+{
+  "cislo_objednavky": "EO-SK-2026-004729",
+  "jmeno": "Milan Ďurica",
+  "email": "milan.durica@example.sk",
+  "kod_produktu": "HD-15",
+  "jazyk": "sk",
+  "kanal": "E-mail",
+  "popis_cesky": "V balení přívodní hadice HD-15 chybí redukce na ventil uvedená v obsahu balení.",
+  "popis_fotky": null,
+  "typ_vady": "Chybějící díl v balení",
+  "chybejici_udaje": [
+    "fotka vady"
+  ],
+  "nakup_mimo_eshop": false
+}

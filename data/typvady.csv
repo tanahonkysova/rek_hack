@@ -1,0 +1,9 @@
+nazev,kod,uznatelna,vychozireseni,vyzadujetechnika,popisproai
+Výrobní vada materiálu,MAT,Ano,Výměna,Ne,"Vada plastu nebo kovu bez vnější příčiny: prasklina přes kryt panelu kávovaru s čistými okraji, bez otlaku a stop pádu, často krátce po zapnutí nebo zahřátí. Výrobek nespadl, zákazník nepopisuje náraz."
+Nefunkční elektrika nebo motor,ELE,Ano,Oprava,Ano,"Spotřebič nejde zapnout, nenabíjí, vypíná se nebo hlásí chybu: kávovar hlásí chybu spařovací jednotky, vysavač ztrácí výkon nebo nenabíjí, motor nenaskočí. Bez fotky se posoudit nedá, posuzuje technik."
+Únik vody,VODA,Ano,Výměna,Ano,"Voda uniká kolem rychlospojky přívodní hadice myčky nebo pračky, z těsnění nebo z nádržky kávovaru. Na fotce je vidět mokro, kapky nebo posunuté těsnění. Ověří technik (Aquastop, těsnost spoje)."
+Chybějící díl v balení,DIL,Ano,Oprava,Ne,"Zákazník po rozbalení postrádá díl uvedený v obsahu balení: vodní filtr, hadici, nástavec vysavače, odkapávač. Hlásí se brzy po nákupu, fotka obsahu balení."
+Poškození při přepravě,PREP,Ano,Výměna,Ne,"Poškozená krabice, promáčknutý nebo prasklý výrobek hned po doručení, nefunkční při dodání (DOA). Zákazník zmiňuje přepravce nebo rozbalení."
+Mechanické poškození uživatelem,MECH,Ne,Zamítnuto,Ano,"Stopy pádu nebo nárazu: otlak, promáčknutí, odřený roh, kávovar spadl při stěhování nebo do krytu panelu narazila konvice. Prasklina vycházející z otlaku nebo rohu = náraz. Uznat nelze, posoudí technik."
+Běžné opotřebení,OPOT,Ne,Zamítnuto,Ne,"Opotřebení odpovídající používání: ošoupané kartáče vysavače, slabší baterie po letech, zanesené filtry. Kávovar zanesený vodním kamenem kvůli neodvápňování je běžné opotřebení, ne vada; reklamace se neuznává."
+Nelze určit,NEURC,Ano,,Ano,"Popis ani fotka nestačí k určení příčiny, nebo si odporují. Agent nic nedomýšlí, posoudí technik."

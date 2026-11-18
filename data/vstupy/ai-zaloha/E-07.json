@@ -1,0 +1,13 @@
+{
+  "cislo_objednavky": "EO-CZ-2026-003380",
+  "jmeno": "Roman Novák",
+  "email": "roman.novak@example.cz",
+  "kod_produktu": "KV-450",
+  "jazyk": "cs",
+  "kanal": "E-mail",
+  "popis_cesky": "Na kávovaru KV-450 je prasklý kryt panelu, zákazník žádá nový.",
+  "popis_fotky": "Prasklina vychází z otlaku na rohu krytu, roh je promáčknutý.",
+  "typ_vady": "Mechanické poškození uživatelem",
+  "chybejici_udaje": [],
+  "nakup_mimo_eshop": false
+}
