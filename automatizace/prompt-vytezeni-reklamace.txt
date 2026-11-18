@@ -17,6 +17,7 @@ typ_vady, chybejici_udaje, nakup_mimo_eshop.
 - typ_vady: přesně jeden název ze seznamu typy_vad. Když si nejsi jistý, "Nelze určit".
 - chybejici_udaje: pole textů z možností "číslo objednávky", "doklad o koupi", "fotka vady",
   "popis vady". Doklad o koupi chybí, když zákazník píše, že koupil mimo e-shop, a doklad nepřiložil.
+  "popis vady" uveď jen tehdy, když zákazník vůbec nepopisuje, co je s výrobkem špatně.
 - nakup_mimo_eshop: true, když zákazník píše, že výrobek koupil v obchodě nebo u jiného prodejce.
 - Chybějící hodnoty vrať jako null. Nic si nevymýšlej.
 
