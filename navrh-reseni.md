@@ -41,7 +41,18 @@ Nové sloupce: Doporučena kulance, Yes/No (výchozí Ne), rek_kulance, tabulka 
 - Stav: aplikace nasazená v Training12 (https://apps.powerapps.com/play/e/a6e76ae4-41cc-e656-b96f-bd359611a015/app/e9b1056d-f22f-45e7-b7d9-96691c633eb6), kód v `reklamace-app/`, snímky v `demo/snimky/`. Sdílení s dalším lab účtem neproběhlo (tým má jen LabAdmin12).
 
 ## Automatizace
-(vyplní část 3)
+- Schválení (A1): C e-mail v Outlooku s tlačítky (Office 365 Outlook: Send email with options, Schválit / Vrátit); komentář se nesbírá, při vrácení se zapíše „vráceno e-mailem"
+- Zprávy Kláře (A2): C e-mail
+- Žádost navíc (A3): Zbývá dní (Lhůta - dnes), počet servisních požadavků se stejným produktem a typem vady za 30 dnů
+- Potvrzení navíc (A4): nic navíc (potvrzení zůstává podle brand/email-texty.json, 3 věty)
+- Texty (A5), interně tykání, pojmy podle slovníku:
+  - Vráceno: „Jitka ti vrátila servisní požadavek {číslo} zpět do Posuzujeme: {komentář}" (SK: „Jitka ti vrátila servisnú požiadavku {číslo} späť do Posudzujeme: {komentár}")
+  - Schváleno: „Jitka schválila servisní požadavek {číslo}: {rozhodnutí}. Můžeš pokračovat." (SK: „Jitka schválila servisnú požiadavku {číslo}: {rozhodnutie}. Môžeš pokračovať.")
+  - Výzva odeslána: „Servisní požadavek {číslo} čeká na podklady, zákazníkovi odešla výzva: {chybí}." (SK: „Servisná požiadavka {číslo} čaká na podklady, zákazníkovi odišla výzva: {chýba}.")
+- Výzva v automatizaci: V2 Kulance po záruce, bez F3. F2 načte navíc rek_kulance a rek_kulanceduvod a u doporučené kulance je dá do žádosti o schválení na první místo
+- Připojení: Microsoft Dataverse (i AI Builder prompt), Office 365 Outlook, SharePoint. Teams ani Approvals podle A1 C a A2 C nejsou potřeba
+- Schránka: tým nemá sdílenou schránku reklamace@, F1 sleduje doručenou poštu LabAdmin12 (When a new email arrives V3) a odesílá z ní (Send an email V2). Šablony jsou v https://m365x29026754.sharepoint.com/sites/Training12, knihovna Reklamace/_sablony
+- Poznámka: tým má jeden lab účet, Klára, Jitka i Pavel jsou LabAdmin12. Odkaz na detail v F2 (`<URL aplikace>/reklamace/{id}`) se doplní, až bude hotová aplikace z části 2
 
 ## Agent
 (vyplní část 4)

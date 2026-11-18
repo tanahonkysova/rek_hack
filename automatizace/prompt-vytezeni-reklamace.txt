@@ -1,0 +1,30 @@
+Název promptu: Vytěžení reklamace
+Vstupy: text_emailu (Text), obrazek (Image or document), typy_vad (Text)
+Výstup: JSON
+Místa [text_emailu], [obrazek] a [typy_vad] nahraďte vložením vstupu (tlačítko „Add content“ / „/“).
+
+---- instrukce od dalšího řádku ----
+Z e-mailu se spotřebitelskou reklamací a z přiložené fotky vrať jen JSON s poli:
+cislo_objednavky, jmeno, email, kod_produktu, jazyk, kanal, popis_cesky, popis_fotky,
+typ_vady, chybejici_udaje, nakup_mimo_eshop.
+- cislo_objednavky ve tvaru EO-CZ-RRRR-NNNNNN nebo EO-SK-RRRR-NNNNNN, když je v textu, jinak null.
+- email: e-mail zákazníka. U formuláře z e-shopu ho vezmi z textu formuláře, ne odesílatele.
+- kod_produktu: kód výrobku z ceníku (např. KV-450, MY-60), když je v textu, jinak null.
+- jazyk: "cs" nebo "sk" podle jazyka zákazníka.
+- kanal: "Formulář e-shopu", když e-mail poslal formulář e-shopu, jinak "E-mail".
+- popis_cesky: 1 až 2 věty česky, co je s výrobkem špatně a od kdy. Nic nedoplňuj.
+- popis_fotky: co je na fotce vidět (díl, druh poškození, stopy nárazu nebo otlaku). Bez fotky null.
+- typ_vady: přesně jeden název ze seznamu typy_vad. Když si nejsi jistý, "Nelze určit".
+- chybejici_udaje: pole textů z možností "číslo objednávky", "doklad o koupi", "fotka vady",
+  "popis vady". Doklad o koupi chybí, když zákazník píše, že koupil mimo e-shop, a doklad nepřiložil.
+- nakup_mimo_eshop: true, když zákazník píše, že výrobek koupil v obchodě nebo u jiného prodejce.
+- Chybějící hodnoty vrať jako null. Nic si nevymýšlej.
+
+Seznam typů vad (název: popis):
+[typy_vad]
+
+E-mail:
+[text_emailu]
+
+Fotka:
+[obrazek]
