@@ -31,5 +31,5 @@ Ukázkové věty (česky a slovensky):
    Vašu reklamáciu R-2026-14231 sme prijali a už ju má na starosti naša špecialistka. Vybavíme ju najneskôr do 18. 12. 2026 a o každom kroku vás budeme informovať.
 2. Abychom mohli reklamaci posoudit, pošlete nám prosím ještě doklad o koupi a fotku vady. Lhůta běží od přijetí reklamace, nic tím neztrácíte.
    Aby sme mohli reklamáciu posúdiť, pošlite nám, prosím, ešte doklad o kúpe a fotku vady. Lehota plynie od prijatia reklamácie, nič tým nestrácate.
-3. Technik zjistil, že kávovar je zanesený vodním kamenem, protože se pravidelně neodvápňoval. Podle čl. 5 reklamačního řádu jde o běžné opotřebení, a reklamaci proto neuznáváme. Rádi vám nabídneme placené odvápnění a servis za 690 Kč.
-   Technik zistil, že kávovar je zanesený vodným kameňom, pretože sa pravidelne neodvápňoval. Podľa čl. 5 reklamačného poriadku ide o bežné opotrebenie, a preto reklamáciu neuznávame. Radi vám ponúkneme platené odvápnenie a servis za 28 €.
+3. Technik zjistil, že kávovar je zanesený vodním kamenem, protože se pravidelně neodvápňoval. Podle čl. 8 reklamačního řádu jde o běžné opotřebení, a reklamaci proto neuznáváme. Rádi vám nabídneme placené odvápnění a servis za 690 Kč.
+   Technik zistil, že kávovar je zanesený vodným kameňom, pretože sa pravidelne neodvápňoval. Podľa čl. 8 reklamačného poriadku ide o bežné opotrebenie, a preto reklamáciu neuznávame. Radi vám ponúkneme platené odvápnenie a servis za 28 €.

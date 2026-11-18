@@ -22,6 +22,7 @@ Viz brand/firma.md. Jednou větou: Pohoda Spotřebiče (smyšlená) prodává k�
 V2 Kulance po záruce (přidělená: tým 12, ((12 - 1) mod 5) + 1 = 2): u reklamace mimo záruku agent posoudí, jestli doporučit kulanci, a zapíše doporučení s důvodem. Návrh AI zůstává Zamítnuto.
 - Okno kulance: záruka skončila před nejvýš 3 měsíci; u espresso automatů KV-450 a KV-800 nejvýš 6 měsíců. Pravidlo se zapíše přímo do instrukce agenta jako seznam modelů (bez nového sloupce na produktu). Typ vady musí být uznatelný (vodní kámen / Běžné opotřebení nikdy).
 - Druh kulance: oprava zdarma, zákazník platí jen díly.
+- Reklamační řád: kulance je čl. 9 Kulance po záruce, vyloučení (vodní kámen, náraz) čl. 8 Vyloučení ze záruky, způsoby vyřízení čl. 7, lhůta 30 dnů čl. 5, záruka 24 měsíců čl. 3. Knowledge pro agenta je `knowledge/Reklamacni-rad.pdf` (starter-kit neexistuje).
 - Schvalování: specialistka (Klára) kulanci navrhne, vedoucí zákaznického centra (Jitka) schvaluje, stejnou cestou jako zamítnutí (stav U vedoucí).
 - Test navíc: kromě E-08 (2 měsíce po záruce) založit ručně jednu reklamaci na KV-800 se zárukou skončenou před 4 až 5 měsíci a uznatelnou vadou; očekávané rek_kulance = Ano. Hodí se i do dema.
 Části: 1, 2, 3, 4, 5
